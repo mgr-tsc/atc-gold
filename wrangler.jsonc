@@ -9,5 +9,8 @@
   },
   "secrets": {
     "required": ["RESEND_API_KEY"]
-  }
+  },
+  // Configure TO_EMAIL as a plain Worker variable in the Cloudflare dashboard.
+  // This is the address that receives contact form submissions.
+  "vars": {}
 }

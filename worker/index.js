@@ -6,7 +6,6 @@ const jsonHeaders = {
 
 const allowedEmailFields = [
 	'from',
-	'to',
 	'cc',
 	'bcc',
 	'reply_to',
@@ -34,7 +33,6 @@ function isSendEmailRequest(value) {
 		value &&
 		typeof value === 'object' &&
 		typeof value.from === 'string' &&
-		(typeof value.to === 'string' || Array.isArray(value.to)) &&
 		typeof value.subject === 'string' &&
 		(typeof value.html === 'string' || typeof value.text === 'string')
 	);
@@ -53,6 +51,10 @@ async function sendEmail(request, env) {
 		return json({ error: 'RESEND_API_KEY is not configured.' }, { status: 500 });
 	}
 
+	if (!env.TO_EMAIL) {
+		return json({ error: 'TO_EMAIL is not configured.' }, { status: 500 });
+	}
+
 	let body;
 
 	try {
@@ -65,11 +67,16 @@ async function sendEmail(request, env) {
 		return json(
 			{
 				error:
-					'Expected a Resend email payload with from, to, subject, and html or text.',
+					'Expected a Resend email payload with from, subject, and html or text.',
 			},
 			{ status: 400 }
 		);
 	}
+
+	const emailPayload = {
+		...pickEmailPayload(body),
+		to: env.TO_EMAIL,
+	};
 
 	const resendResponse = await fetch(RESEND_EMAILS_ENDPOINT, {
 		method: 'POST',
@@ -77,7 +84,7 @@ async function sendEmail(request, env) {
 			authorization: `Bearer ${env.RESEND_API_KEY}`,
 			'content-type': 'application/json',
 		},
-		body: JSON.stringify(pickEmailPayload(body)),
+		body: JSON.stringify(emailPayload),
 	});
 
 	const responseText = await resendResponse.text();
