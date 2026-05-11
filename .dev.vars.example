@@ -1,2 +1,6 @@
 RESEND_API_KEY="re_xxxxxxxxx"
 TO_EMAIL="contact@your-company-domain.com"
+FROM_EMAIL="ATC GOLD CONSTRUCTION <leads@your-company-domain.com>"
+TURNSTILE_SITE_KEY="1x00000000000000000000AA"
+TURNSTILE_SECRET_KEY="1x0000000000000000000000000000000AA"
+TURNSTILE_ALLOWED_HOSTNAMES="localhost,127.0.0.1,your-company-domain.com,www.your-company-domain.com"
