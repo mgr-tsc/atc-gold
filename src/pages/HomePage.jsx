@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import LeadCapturePopup from '@/components/LeadCapturePopup';
 import { CheckCircle, Zap, ShieldCheck, TrendingUp, Users, Award, Briefcase, HardHat, Rss, Settings, Building, Cloud, Rocket, Hand, HeartHandshake, Wifi, Server, Cable, Truck, MonitorCheck, Network } from 'lucide-react';
 
 const sectionVariants = {
@@ -102,6 +103,7 @@ const HomePage = () => {
 
   return (
     <>
+      <LeadCapturePopup />
       <Helmet>
         <title>ATC GOLD CONSTRUCTION | Home</title>
         <meta name="description" content="WE BUILD THE BACKBONE OF TOMORROW'S NETWORKS. Powering the nation's growth in broadband, energy, and mobility." />
