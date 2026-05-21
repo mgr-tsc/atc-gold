@@ -14,5 +14,10 @@
   // TURNSTILE_ALLOWED_HOSTNAMES as plain Worker variables in Cloudflare.
   // FROM_EMAIL must be a verified Resend sender. TURNSTILE_SECRET_KEY must be
   // stored as a secret, never exposed to the client.
-  "vars": {}
+  "vars": {
+  "TO_EMAIL": "peter.lo@atcgoldllc.com",
+  "FROM_EMAIL": "ATC GOLD CONSTRUCTION <atc_partner@balerionsolutions.ai>",
+  "TURNSTILE_SITE_KEY": "turnstile_(08s&_keyATC",
+  "TURNSTILE_ALLOWED_HOSTNAMES": "atcgoldllc.com, atc-gold.marco1996guevara.workers.dev"
+}
 }
