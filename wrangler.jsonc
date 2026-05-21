@@ -15,9 +15,9 @@
   // FROM_EMAIL must be a verified Resend sender. TURNSTILE_SECRET_KEY must be
   // stored as a secret, never exposed to the client.
   "vars": {
-  "TO_EMAIL": "peter.lo@atcgoldllc.com",
-  "FROM_EMAIL": "ATC GOLD CONSTRUCTION <atc_partner@balerionsolutions.ai>",
-  "TURNSTILE_SITE_KEY": "turnstile_(08s&_keyATC",
-  "TURNSTILE_ALLOWED_HOSTNAMES": "atcgoldllc.com, atc-gold.marco1996guevara.workers.dev"
-}
+    "TO_EMAIL": "peter.lo@atcgoldllc.com",
+    "FROM_EMAIL": "ATC GOLD CONSTRUCTION <atc_partner@balerionsolutions.ai>",
+    "TURNSTILE_SITE_KEY": "0x4AAAAAADT1aziTX4xbZO8a",
+    "TURNSTILE_ALLOWED_HOSTNAMES": "atc-gold.marco1996guevara.workers.dev"
+  }
 }
